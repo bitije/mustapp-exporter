@@ -1,2 +1,4 @@
 env/
 pyrightconfig.json
+want.csv
+watched.csv
