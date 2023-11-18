@@ -2,13 +2,13 @@
 
 Export your Must data to CSV. Must app scraper. 
 
-## Installation
+## Requirements
 
 Python -> https://www.python.org/downloads/
 
-Download `scrapy`. Enter in console:
+Download `scrapy`.
 ```
-$ python -m pip install scrapy
+$ pip install scrapy
 ```
 
 ## Usage
