@@ -85,16 +85,16 @@ class MustappSpider(scrapy.Spider):
         columns_watched = ['Title', 'Year', 'Rating10', 'WatchedDate', 'Review']
         self.writer_watched.writerow(columns_watched)
 
-async def main():
+async def main(username):
     """
     Start crawler instance of MustappSpider with username
     from user input
     """
     MySpider = MustappSpider
-    MySpider.username = input('Enter your nickname: ')
+    MySpider.username = username 
     process = CrawlerProcess()
     process.crawl(MySpider)
     process.start()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main(input('Enter your nickname: ')))
