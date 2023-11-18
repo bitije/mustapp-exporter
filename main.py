@@ -2,8 +2,6 @@ import csv
 import scrapy
 from re import findall
 from scrapy.crawler import CrawlerProcess
-import aiohttp
-
 
 class MustappSpider(scrapy.Spider):
     name = "mustappspider"
