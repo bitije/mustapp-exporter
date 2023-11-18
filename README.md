@@ -4,14 +4,17 @@ Export your Must data to CSV. Must app scraper.
 
 ## Requirements
 
-Python -> https://www.python.org/downloads/
+- Python: https://www.python.org/downloads/
 
-Download `scrapy`.
-```
-$ pip install scrapy
-```
+- Scrapy: `pip install scrapy`
 
 ## Usage
+
+### TL;DR
+To start script:
+```
+python main.py
+```
 
 ### How to get your nickname?
 Copy link to your profile, letters after `@` is your nickname.
@@ -19,12 +22,8 @@ Copy link to your profile, letters after `@` is your nickname.
 Example: `https://mustapp.com/@username/`
 nickname: `username`.
 
-Go to directory where script is located then use it from here:
-```
-python main.py
-```
 
-You will get two .CSV files in the same directory:
+You will get two .CSV files:
 
 - `want.csv` with columns: `Title`, `Year`.
 
