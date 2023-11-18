@@ -1,4 +1,5 @@
 import csv
+import asyncio
 import scrapy
 from re import findall
 from scrapy.crawler import CrawlerProcess
@@ -12,8 +13,8 @@ class MustappSpider(scrapy.Spider):
         Create empty csv tables while instance is
         created
         """
-        super(MySpider, self).__init__(*args, **kwargs)
         self.create_tables()
+        super().__init__(*args, **kwargs)
 
     def start_requests(self):
         """
@@ -84,20 +85,16 @@ class MustappSpider(scrapy.Spider):
         columns_watched = ['Title', 'Year', 'Rating10', 'WatchedDate', 'Review']
         self.writer_watched.writerow(columns_watched)
 
-def main(crawler):
+async def main():
     """
     Start crawler instance of MustappSpider with username
     from user input
     """
+    MySpider = MustappSpider
+    MySpider.username = input('Enter your nickname: ')
     process = CrawlerProcess()
-    process.crawl(crawler)
+    process.crawl(MySpider)
     process.start()
 
 if __name__ == "__main__":
-    """
-    Create MustappSpider instance with
-    username defined
-    """
-    MySpider = MustappSpider
-    MySpider.username = input('Enter your nickname: ')
-    main(MySpider)
+    asyncio.run(main())
